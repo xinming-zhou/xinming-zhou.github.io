@@ -3,26 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta
     name="description"
-    content="Academic website of Xinming Zhou, a Ph.D. student in Speech, Language, and Hearing Sciences with clinical audiology training."
+    content="Academic website of Xinming Zhou, a Ph.D. student in Speech, Language, and Hearing Sciences at The University of Texas at Austin."
   >
-
-  <title>Xinming Zhou | Speech and Hearing Science</title>
+  <title>Xinming Zhou | Speech, Language, and Hearing Sciences</title>
 
   <style>
     :root {
-      --background: #f7faf9;
-      --surface: #ffffff;
-      --soft: #eaf4f1;
-      --text: #26383c;
-      --muted: #64777b;
-      --primary: #4f817d;
-      --primary-dark: #315f5c;
-      --accent: #d9a06f;
-      --border: #d9e7e4;
-      --max-width: 1080px;
+      --text: #222222;
+      --muted: #626a73;
+      --accent: #4d6f8a;
+      --accent-light: #eef3f7;
+      --border: #d9dee3;
+      --background: #ffffff;
+      --max-width: 980px;
     }
 
     * {
@@ -35,19 +30,21 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: var(--background);
-      line-height: 1.7;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
     a {
-      color: var(--primary-dark);
+      color: var(--accent);
       text-decoration: none;
     }
 
-    a:hover {
-      color: var(--accent);
+    a:hover,
+    a:focus {
+      text-decoration: underline;
     }
 
     .container {
@@ -56,253 +53,236 @@
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(247, 250, 249, 0.96);
       border-bottom: 1px solid var(--border);
+      background: #ffffff;
     }
 
-    nav {
-      min-height: 68px;
+    .topbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
+      min-height: 72px;
     }
 
-    .name {
-      font-weight: 700;
+    .site-name {
       color: var(--text);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-size: 0.92rem;
-    }
-
-    .hero {
-      padding: 90px 0 70px;
-      background:
-        radial-gradient(circle at 85% 15%, #f6dfcb 0, transparent 25%),
-        linear-gradient(135deg, #edf7f4, #f9fbfa);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 0.7fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(2.8rem, 7vw, 5rem);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-    }
-
-    .chinese-name {
-      display: block;
-      margin-top: 12px;
-      color: var(--primary);
-      font-size: 0.42em;
-      letter-spacing: 0.08em;
-    }
-
-    .subtitle {
-      max-width: 720px;
-      margin: 0 0 20px;
-      color: var(--primary-dark);
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    .intro {
-      max-width: 720px;
-      color: var(--muted);
       font-size: 1.05rem;
+      font-weight: 700;
     }
 
-    .buttons {
+    nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 11px 19px;
-      border: 1px solid var(--primary);
-      border-radius: 999px;
-      font-weight: 700;
-    }
-
-    .button-primary {
-      color: white;
-      background: var(--primary);
-    }
-
-    .button-primary:hover {
-      color: white;
-      background: var(--primary-dark);
-    }
-
-    .photo-placeholder {
-      aspect-ratio: 4 / 5;
-      display: grid;
-      place-items: center;
-      padding: 25px;
-      border: 8px solid white;
-      border-radius: 28px;
-      color: var(--primary-dark);
-      background: linear-gradient(145deg, #d9ece8, #f6dfcb);
-      box-shadow: 0 15px 35px rgba(45, 87, 83, 0.12);
-      text-align: center;
-      font-weight: 700;
-    }
-
-    section {
-      padding: 70px 0;
-    }
-
-    section:nth-of-type(even) {
-      background: var(--soft);
-    }
-
-    .section-title {
-      margin-bottom: 12px;
-      font-size: 2.2rem;
-      letter-spacing: -0.03em;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      margin-bottom: 34px;
-      color: var(--muted);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
+      font-size: 0.94rem;
     }
 
-    .card {
-      padding: 24px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background: var(--surface);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: var(--primary-dark);
-    }
-
-    .card p {
-      margin-bottom: 0;
+    nav a {
       color: var(--muted);
     }
 
-    .item {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 25px;
-      padding: 22px 0;
-      border-top: 1px solid var(--border);
+    main {
+      padding: 46px 0 72px;
     }
 
-    .item:last-child {
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 38px;
+      align-items: start;
+      padding-bottom: 34px;
       border-bottom: 1px solid var(--border);
     }
 
-    .date {
-      color: var(--primary-dark);
-      font-weight: 700;
-    }
-
-    .item h3 {
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-    }
-
-    .item p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .clinical-box {
-      display: grid;
-      grid-template-columns: 0.65fr 1.35fr;
-      gap: 30px;
-      padding: 32px;
-      border-radius: 24px;
-      color: white;
-      background: linear-gradient(145deg, var(--primary), var(--primary-dark));
-    }
-
-    .hours {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .clinical-box p {
-      color: rgba(255, 255, 255, 0.86);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      padding: 7px 11px;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 999px;
-      font-size: 0.86rem;
-    }
-
-    .contact {
-      padding: 32px;
+    .headshot {
+      width: 190px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
       border: 1px solid var(--border);
-      border-radius: 24px;
-      background: white;
+      background: #f2f2f2;
     }
 
-    footer {
-      padding: 28px 0;
+    .headshot-placeholder {
+      width: 190px;
+      aspect-ratio: 4 / 5;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      border: 1px solid var(--border);
       color: var(--muted);
+      background: #f5f5f5;
       text-align: center;
       font-size: 0.9rem;
     }
 
-    @media (max-width: 800px) {
-      .hero-grid,
-      .cards,
-      .clinical-box {
-        grid-template-columns: 1fr;
-      }
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+    }
 
-      .photo-placeholder {
-        max-width: 320px;
-      }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2.35rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
 
-      nav {
-        padding: 12px 0;
+    .chinese-name {
+      color: var(--muted);
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    .position {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .intro-text p {
+      margin: 0 0 15px;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      padding: 34px 0 8px;
+    }
+
+    .overview-box h2 {
+      margin-bottom: 14px;
+    }
+
+    .education-brief {
+      display: grid;
+      gap: 14px;
+    }
+
+    .education-brief p {
+      margin: 0;
+    }
+
+    section {
+      padding: 40px 0 0;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent-light);
+      font-size: 1.5rem;
+      font-weight: 650;
+    }
+
+    h3 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+    }
+
+    .research-list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .research-list li {
+      margin-bottom: 8px;
+    }
+
+    .news-list,
+    .education-list,
+    .publication-list,
+    .funding-list,
+    .clinical-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 135px minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .row p {
+      margin: 0;
+    }
+
+    .details {
+      color: var(--muted);
+    }
+
+    .clinical-summary {
+      padding: 18px 20px;
+      border-left: 3px solid var(--accent);
+      background: var(--accent-light);
+    }
+
+    .clinical-summary p {
+      margin: 0 0 12px;
+    }
+
+    .clinical-summary p:last-child {
+      margin-bottom: 0;
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-list p {
+      margin: 0 0 8px;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
         align-items: flex-start;
         flex-direction: column;
+        padding: 16px 0;
       }
 
-      .item {
+      .intro-layout,
+      .overview-grid {
         grid-template-columns: 1fr;
-        gap: 5px;
+      }
+
+      .headshot,
+      .headshot-placeholder {
+        width: 160px;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      h1 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -311,270 +291,329 @@
 <body>
 
   <header>
-    <div class="container">
-      <nav>
-        <a class="name" href="#home">Xinming Zhou</a>
+    <div class="container topbar">
+      <a class="site-name" href="#about">Xinming Zhou</a>
 
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#clinical">Clinical Training</a>
-          <a href="#news">News</a>
-          <a href="#contact">Contact</a>
-        </div>
+      <nav aria-label="Main navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#clinical">Clinical Training</a>
+        <a href="#news">News</a>
+        <a href="#funding">Funding</a>
+        <a href="#contact">Contact</a>
+        <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main class="container">
 
-    <section class="hero" id="home">
-      <div class="container hero-grid">
+    <section id="about" class="intro-layout">
 
-        <div>
-          <h1>
-            Xinming Zhou
-            <span class="chinese-name">周歆茗</span>
-          </h1>
+      <!--
+        To use your headshot:
+        1. Upload a photo named headshot.jpg to the repository.
+        2. Delete the placeholder div below.
+        3. Remove the comment marks around the img element.
+      -->
 
-          <p class="subtitle">
-            Ph.D. Student in Speech, Language, and Hearing Sciences
-            with 500+ hours of clinical audiology training
-          </p>
-
-          <p class="intro">
-            I study how cognitive, neural, and social factors influence
-            speech understanding in adverse listening conditions. My work
-            combines behavioral and electrophysiological approaches with
-            clinical perspectives in audiology and hearing rehabilitation.
-          </p>
-
-          <div class="buttons">
-            <a class="button button-primary" href="#research">
-              View Research
-            </a>
-
-            <a class="button" href="#contact">
-              Contact Me
-            </a>
-
-            <!-- Replace # with the link to your uploaded CV later -->
-            <a class="button" href="#">
-              Download CV
-            </a>
-          </div>
-        </div>
-
-        <div class="photo-placeholder">
-          Add professional headshot here later
-        </div>
-
+      <div class="headshot-placeholder">
+        Professional headshot
       </div>
-    </section>
 
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About</h2>
+      <!-- <img class="headshot" src="headshot.jpg" alt="Portrait of Xinming Zhou"> -->
 
-        <p class="section-intro">
-          I am a Ph.D. student in Speech, Language, and Hearing Sciences
-          at The University of Texas at Austin, advised by Dr. Chang Liu.
-          I am also completing clinical audiology training toward professional
-          certification. My long-term goal is to connect hearing science
-          research with clinically meaningful approaches to communication
-          and hearing rehabilitation.
+      <div class="intro-text">
+        <h1>
+          Xinming Zhou
+          <span class="chinese-name">周歆茗</span>
+        </h1>
+
+        <p class="position">
+          Ph.D. Student in Speech, Language, and Hearing Sciences<br>
+          The University of Texas at Austin
         </p>
+
+        <p>
+          I am a third year Ph.D. student in the Department of Speech, Language, and
+          Hearing Sciences at The University of Texas at Austin, advised by
+          Dr. Chang Liu. I am also completing clinical audiology training
+          toward professional certification and have accumulated more than
+          500 hours of supervised clinical experience in various settings. 
+        </p>
+
+        <p>
+          My research focuses on speech understanding in noise and other
+          adverse listening conditions. I am interested in how cognitive,
+          neural, and social factors contribute to individual differences in
+          speech perception. My work uses behavioral and electrophysiological
+          methods and is informed by clinical questions in audiology and
+          hearing rehabilitation.
+        </p>
+
+        <div class="profile-links">
+          <!-- Replace # with your actual links -->
+          <a href="mailto:xinming.zhou@austin.utexas.edu">Email</a>
+          <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>
+          <a href="#" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="#" target="_blank" rel="noopener">ResearchGate</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </section>
+
+    <div class="overview-grid">
+
+      <section class="overview-box">
+        <h2>Research Focus</h2>
+
+        <p>
+          My current work examines how listeners understand speech in
+          challenging environments, including the effects of background noise,
+          working memory, vocabulary knowledge, prior experience, and social
+          contact.
+        </p>
+
+        <ul class="research-list">
+          <li>Speech perception in noise</li>
+          <li>Individual differences in speech understanding</li>
+          <li>Auditory learning and plasticity</li>
+          <li>Behavioral and electrophysiological methods</li>
+        </ul>
+      </section>
+
+      <section class="overview-box">
+        <h2>Education</h2>
+
+        <div class="education-brief">
+          <p>
+            <strong>Ph.D., Speech, Language, and Hearing Sciences</strong><br>
+            The University of Texas at Austin, 2024–Present
+          </p>
+
+          <p>
+            <strong>M.S., Neuroscience and Education</strong><br>
+            Teachers College, Columbia University, 2022–2024
+          </p>
+
+          <p>
+            <strong>B.A., Cognitive Science</strong><br>
+            University of Connecticut, 2018–2022
+          </p>
+        </div>
+      </section>
+
+    </div>
 
     <section id="research">
-      <div class="container">
-        <h2 class="section-title">Research</h2>
+      <h2>Research</h2>
 
-        <p class="section-intro">
-          My research focuses primarily on speech perception in noise and
-          other challenging listening environments.
-        </p>
+      <div class="clinical-list">
 
-        <div class="cards">
-
-          <article class="card">
-            <h3>Speech Perception in Noise</h3>
-            <p>
-              Examining how listeners understand speech across different
-              types of background noise and listening conditions.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Cognitive and Social Factors</h3>
-            <p>
-              Studying how working memory, vocabulary knowledge, prior
-              experience, and social contact affect speech understanding.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Auditory Electrophysiology</h3>
-            <p>
-              Using electrophysiological methods to investigate auditory
-              learning, emotional processing, and neural responses to sound.
-            </p>
-          </article>
-
+        <div>
+          <h3>Speech Perception in Noise</h3>
+          <p>
+            I study how different types of background noise influence speech
+            understanding and short-term memory.
+          </p>
         </div>
+
+        <div>
+          <h3>Individual Differences in Speech Understanding</h3>
+          <p>
+            I examine how working memory, vocabulary knowledge, prior
+            experience, and social contact contribute to variability in
+            speech perception.
+          </p>
+        </div>
+
+        <div>
+          <h3>Auditory Learning and Electrophysiology</h3>
+          <p>
+            I use behavioral and electrophysiological approaches to investigate
+            auditory learning, plasticity, and neural responses to sound.
+          </p>
+        </div>
+
       </div>
     </section>
 
     <section id="publications">
-      <div class="container">
-        <h2 class="section-title">Selected Publications</h2>
+      <h2>Selected Publications and Presentations</h2>
 
-        <p class="section-intro">
-          A selected list is shown here. The complete record will remain
-          available in my curriculum vitae.
-        </p>
+      <div class="publication-list">
 
-        <div class="item">
-          <div class="date">2026</div>
-          <div>
-            <h3>
-              The differential impact of sleep-dependent consolidation
-              in speech perceptual learning
-            </h3>
-            <p>
-              Xinming Zhou and F. Sayako Earle. Journal of Speech,
-              Language, and Hearing Research.
-            </p>
-          </div>
+        <div>
+          <p>
+            <strong>Zhou, X.</strong>, &amp; Earle, F. S. (2026).
+            The differential impact of sleep-dependent consolidation in
+            speech perceptual learning: A systematic review.
+            <em>Journal of Speech, Language, and Hearing Research</em>.
+          </p>
         </div>
 
-        <div class="item">
-          <div class="date">2026</div>
-          <div>
-            <h3>
-              The role of vocabulary knowledge and social contact
-              in L2-accented speech perception
-            </h3>
-            <p>
-              Xinming Zhou, Christopher Heffner, and Emily B. Myers.
-              Proceedings of the Annual Meeting of the Cognitive Science Society.
-            </p>
-          </div>
+        <div>
+          <p>
+            <strong>Zhou, X.</strong>, Heffner, C., &amp; Myers, E. B. (2026).
+            The role of vocabulary knowledge and social contact in
+            L2-accented speech perception: Evidence from low-exposure listeners.
+            <em>Proceedings of the Annual Meeting of the Cognitive Science Society</em>.
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <strong>Zhou, X.</strong>, &amp; Liu, C. (2025).
+            The effect of noise types on working memory and speech-in-noise
+            recognition. Poster presented at the 188th Meeting of the
+            Acoustical Society of America.
+          </p>
         </div>
 
       </div>
+
+      <p class="small-note">
+        See my CV for the complete list of publications and presentations.
+      </p>
     </section>
 
     <section id="clinical">
-      <div class="container">
-        <h2 class="section-title">Clinical Audiology Training</h2>
+      <h2>Clinical Training</h2>
 
-        <p class="section-intro">
-          My clinical work complements my research by grounding questions
-          about speech perception and hearing in patient-centered practice.
+      <div class="clinical-summary">
+        <p>
+          I have completed more than 500 hours of supervised clinical
+          audiology training across university clinics, private practices,
+          otolaryngology settings, and community screening programs.
         </p>
 
-        <div class="clinical-box">
-          <div>
-            <div class="hours">500+</div>
-            <p>documented clinical training hours</p>
-          </div>
-
-          <div>
-            <p>
-              My training includes adult and pediatric hearing assessment,
-              hearing aid consultation and follow-up, tinnitus assessment,
-              cochlear implant services, vestibular testing, auditory
-              processing assessment, electrophysiology, and community screening.
-            </p>
-
-            <div class="tags">
-              <span class="tag">Diagnostics</span>
-              <span class="tag">Hearing Aids</span>
-              <span class="tag">Tinnitus</span>
-              <span class="tag">Cochlear Implants</span>
-              <span class="tag">Vestibular Testing</span>
-              <span class="tag">Electrophysiology</span>
-            </div>
-          </div>
-        </div>
+        <p>
+          My experience includes hearing evaluation, hearing aid consultation
+          and follow-up, tinnitus assessment, cochlear implant services,
+          vestibular testing, auditory processing assessment, pediatric and
+          adult screening, and auditory electrophysiology.
+        </p>
       </div>
+
+      <p class="small-note">
+        A full list of clinical placements is available in my CV.
+      </p>
     </section>
 
     <section id="news">
-      <div class="container">
-        <h2 class="section-title">News and Updates</h2>
+      <h2>News</h2>
 
-        <p class="section-intro">
-          This section will feature selected publications, presentations,
-          awards, funding, invited talks, and major professional milestones.
-        </p>
+      <div class="news-list">
 
-        <div class="item">
+        <div class="row">
           <div class="date">July 2026</div>
           <div>
-            <h3>Cognitive Science Society presentation</h3>
-            <p>
-              Presented work on vocabulary knowledge and social contact
-              in L2-accented speech perception.
-            </p>
+            Presented a flash talk at the Annual Meeting of the Cognitive
+            Science Society on vocabulary knowledge and social contact in
+            L2-accented speech perception.
           </div>
         </div>
 
-        <div class="item">
+        <div class="row">
+          <div class="date">July 2026</div>
+          <div>
+            Received the Sadanand Singh Memorial Scholarship from the
+            American Academy of Audiology Foundation.
+          </div>
+        </div>
+
+        <div class="row">
           <div class="date">2026–2027</div>
           <div>
-            <h3>Outstanding Graduate Research Fellowship</h3>
+            Received the Outstanding Graduate Research Fellowship from
+            The University of Texas at Austin.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="date">June 2026</div>
+          <div>
+            Began a funded Health Communication Scholars Program project
+            examining communication, trust, and understanding among older
+            adults with hearing loss.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="funding">
+      <h2>Research Funding</h2>
+
+      <div class="funding-list">
+
+        <div class="row">
+          <div class="date">2026–2027</div>
+          <div>
+            <h3>Health Communication Scholars Program</h3>
+            <p><strong>Role:</strong> Principal Investigator</p>
             <p>
-              Received fellowship support from The University of Texas at Austin.
+              <em>
+                I Hear You: Examining Communication Strategies and Settings
+                to Strengthen Trust and Understanding in Older Adults with
+                Hearing Loss
+              </em>
+            </p>
+            <p class="details">
+              Center for Health Communication, The University of Texas at Austin
+              · $2,500
             </p>
           </div>
         </div>
 
-        <div class="item">
-          <div class="date">2026</div>
+        <div class="row">
+          <div class="date">2021–2022</div>
           <div>
-            <h3>Health Communication Scholars Program</h3>
+            <h3>Undergraduate Research Grant</h3>
+            <p><strong>Role:</strong> Principal Investigator</p>
             <p>
-              Principal investigator on a project examining communication,
-              trust, and understanding among older adults with hearing loss.
+              <em>How Prior Experience Shapes Accent Adaptation</em>
+            </p>
+            <p class="details">
+              UConn Institute for the Brain and Cognitive Sciences · $5,000
             </p>
           </div>
         </div>
 
       </div>
+
+      <p class="small-note">
+        Fellowships, scholarships, travel awards, and academic honors are
+        listed in my CV.
+      </p>
     </section>
 
     <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
+      <h2>Contact</h2>
 
-        <div class="contact">
-          <p>
-            <strong>Xinming Zhou 周歆茗</strong><br>
-            Department of Speech, Language, and Hearing Sciences<br>
-            The University of Texas at Austin
-          </p>
-
-          <p>
-            Email:
-            <a href="mailto:xinming.zhou@austin.utexas.edu">
-              xinming.zhou@austin.utexas.edu
-            </a>
-          </p>
-        </div>
+      <div class="contact-list">
+        <p><strong>Xinming Zhou 周歆茗</strong></p>
+        <p>
+          Department of Speech, Language, and Hearing Sciences<br>
+          The University of Texas at Austin
+        </p>
+        <p>
+          Email:
+          <a href="mailto:xinming.zhou@austin.utexas.edu">
+            xinming.zhou@austin.utexas.edu
+          </a>
+        </p>
       </div>
     </section>
 
-  </main>
+    <footer>
+      <p>
+        Xinming Zhou · Department of Speech, Language, and Hearing Sciences ·
+        The University of Texas at Austin
+      </p>
+    </footer>
 
-  <footer>
-    <div class="container">
-      © 2026 Xinming Zhou. Built with GitHub Pages.
-    </div>
-  </footer>
+  </main>
 
 </body>
 </html>
