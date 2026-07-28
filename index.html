@@ -55,11 +55,11 @@
     }
 
     header {
-      border-bottom: 1px solid #505c78;
-      background: #667493;
       position: sticky;
       top: 0;
       z-index: 20;
+      border-bottom: 1px solid #505c78;
+      background: var(--accent);
       box-shadow: 0 2px 8px rgba(34, 38, 43, 0.08);
     }
 
@@ -92,7 +92,7 @@
     }
 
     nav a {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.92);
     }
 
     nav a:hover,
@@ -107,14 +107,14 @@
     }
 
     .hero {
-      padding: 74px 0 62px;
+      padding: 72px 0 60px;
     }
 
     .intro-layout {
       display: grid;
       grid-template-columns: 180px minmax(0, 1fr);
       gap: 42px;
-      align-items: start;
+      align-items: center;
     }
 
     .headshot,
@@ -180,16 +180,16 @@
     }
 
     .section-band {
-      background: var(--section-background);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      background: var(--section-background);
     }
 
     .overview-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1fr 1fr;
       gap: 54px;
-      padding: 44px 0;
+      padding: 46px 0;
     }
 
     .overview-box {
@@ -213,22 +213,71 @@
       font-size: 1rem;
     }
 
-    .research-list {
-      margin: 14px 0 0;
-      padding-left: 21px;
-    }
-
-    .research-list li {
-      margin-bottom: 7px;
-    }
-
-    .education-brief {
+    .education-logo-list {
       display: grid;
-      gap: 18px;
+      gap: 20px;
     }
 
-    .education-brief p {
+    .education-logo-row {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .education-logo-row img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    .education-logo-row p {
       margin: 0;
+    }
+
+    .homepage-news {
+      display: grid;
+      gap: 16px;
+    }
+
+    .homepage-news-item {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .homepage-news-item:last-child {
+      border-bottom: 0;
+    }
+
+    .homepage-news-item p {
+      margin: 4px 0 0;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .news-link {
+      margin-left: 6px;
+      font-size: 0.92rem;
+    }
+
+    .news-archive {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .news-archive summary {
+      color: var(--accent-dark);
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .news-archive[open] summary {
+      margin-bottom: 16px;
     }
 
     .content-list {
@@ -247,12 +296,6 @@
     .row:last-child {
       padding-bottom: 0;
       border-bottom: 0;
-    }
-
-    .date {
-      color: var(--muted);
-      font-size: 0.92rem;
-      white-space: nowrap;
     }
 
     .row p {
@@ -277,10 +320,15 @@
       margin-bottom: 0;
     }
 
-    .small-note {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 0.92rem;
+    .cv-note {
+      margin-top: 56px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      background: var(--section-background);
+    }
+
+    .cv-note p {
+      margin: 0;
     }
 
     .contact-list p {
@@ -336,31 +384,30 @@
 
   <header>
     <div class="container topbar">
-      <a class="site-name" href="#about">Xinming Zhou</a>
+      <a class="site-name" href="index.html">Xinming Zhou</a>
 
       <nav aria-label="Main navigation">
-        <a href="#research">Research</a>
+        <a href="research.html">Research</a>
+        <a href="#news">News</a>
         <a href="#publications">Publications</a>
         <a href="#clinical">Clinical Training</a>
-        <a href="#news">News</a>
         <a href="#funding">Funding</a>
-        <a href="#contact">Contact</a>
         <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
 
-    <section id="about" class="hero">
+    <section class="hero">
       <div class="container intro-layout">
 
         <div class="headshot-placeholder">
           Professional headshot
         </div>
 
-        <!--
-        Replace the placeholder above with:
+        <!-- Replace the placeholder above with:
         <img class="headshot" src="headshot.jpg" alt="Portrait of Xinming Zhou">
         -->
 
@@ -391,10 +438,10 @@
           </p>
 
           <div class="profile-links">
-            <a href="mailto:xinming.zhou@austin.utexas.edu">Email</a>
-            <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>
+            <a href="research.html">Research</a>
             <a href="https://scholar.google.com/citations?user=wLqK3e4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
             <a href="https://www.linkedin.com/in/xinmingzhou/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>
           </div>
         </div>
 
@@ -405,81 +452,97 @@
       <div class="container overview-grid">
 
         <section class="overview-box">
-          <h2>Research Focus</h2>
-
-          <p>
-            My current work examines how listeners understand speech in
-            challenging environments, including the effects of background noise,
-            working memory, vocabulary knowledge, prior experience, and social
-            contact.
-          </p>
-
-          <ul class="research-list">
-            <li>Speech perception in noise</li>
-            <li>Individual differences in speech understanding</li>
-            <li>Auditory learning and plasticity</li>
-            <li>Behavioral and electrophysiological methods</li>
-          </ul>
-        </section>
-
-        <section class="overview-box">
           <h2>Education</h2>
 
-          <div class="education-brief">
-            <p>
-              <strong>Ph.D., Speech, Language, and Hearing Sciences</strong><br>
-              The University of Texas at Austin, 2024–Present
-            </p>
+          <div class="education-logo-list">
 
-            <p>
-              <strong>M.S., Neuroscience and Education</strong><br>
-              Teachers College, Columbia University, 2022–2024
-            </p>
+            <div class="education-logo-row">
+              <img src="ut-austin-logo.png" alt="The University of Texas at Austin logo">
+              <p>
+                <strong>Ph.D., Speech, Language, and Hearing Sciences</strong><br>
+                The University of Texas at Austin, 2024–Present
+              </p>
+            </div>
 
-            <p>
-              <strong>B.A., Cognitive Science</strong><br>
-              University of Connecticut, 2018–2022
-            </p>
+            <div class="education-logo-row">
+              <img src="teachers-college-logo.png" alt="Teachers College, Columbia University logo">
+              <p>
+                <strong>M.S., Neuroscience and Education</strong><br>
+                Teachers College, Columbia University, 2022–2024
+              </p>
+            </div>
+
+            <div class="education-logo-row">
+              <img src="uconn-logo.png" alt="University of Connecticut logo">
+              <p>
+                <strong>B.A., Cognitive Science, Magna Cum Laude</strong><br>
+                Minor in Neuroscience<br>
+                University of Connecticut, 2018–2022
+              </p>
+            </div>
+
           </div>
+        </section>
+
+        <section class="overview-box" id="news">
+          <h2>Recent News</h2>
+
+          <div class="homepage-news">
+
+            <div class="homepage-news-item">
+              <span class="date">July 2026</span>
+              <p>
+                Presented a flash talk at the Annual Meeting of the Cognitive
+                Science Society on vocabulary knowledge and social contact in
+                L2-accented speech perception.
+              </p>
+            </div>
+
+            <div class="homepage-news-item">
+              <span class="date">July 2026</span>
+              <p>
+                Received the Sadanand Singh Memorial Scholarship from the
+                American Academy of Audiology Foundation.
+              </p>
+            </div>
+
+            <div class="homepage-news-item">
+              <span class="date">2026</span>
+              <p>
+                Published a systematic review on sleep-dependent consolidation
+                in speech perceptual learning.
+                <a class="news-link" href="https://doi.org/10.1044/2026_JSLHR-26-00061" target="_blank" rel="noopener">Paper</a>
+              </p>
+            </div>
+
+          </div>
+
+          <details class="news-archive">
+            <summary>View earlier news</summary>
+
+            <div class="homepage-news-item">
+              <span class="date">2026–2027</span>
+              <p>
+                Received the Outstanding Graduate Research Fellowship from
+                The University of Texas at Austin.
+              </p>
+            </div>
+
+            <div class="homepage-news-item">
+              <span class="date">June 2026</span>
+              <p>
+                Began a funded Health Communication Scholars Program project
+                examining communication, trust, and understanding among older
+                adults with hearing loss.
+              </p>
+            </div>
+          </details>
         </section>
 
       </div>
     </div>
 
     <div class="container">
-
-      <section id="research" class="content-section">
-        <h2>Research</h2>
-
-        <div class="content-list">
-
-          <div>
-            <h3>Speech Perception in Noise</h3>
-            <p>
-              I study how different types of background noise influence speech
-              understanding and short-term memory.
-            </p>
-          </div>
-
-          <div>
-            <h3>Individual Differences in Speech Understanding</h3>
-            <p>
-              I examine how working memory, vocabulary knowledge, prior
-              experience, and social contact contribute to variability in
-              speech perception.
-            </p>
-          </div>
-
-          <div>
-            <h3>Auditory Learning and Electrophysiology</h3>
-            <p>
-              I use behavioral and electrophysiological approaches to investigate
-              auditory learning, plasticity, and neural responses to sound.
-            </p>
-          </div>
-
-        </div>
-      </section>
 
       <section id="publications" class="content-section">
         <h2>Selected Publications and Presentations</h2>
@@ -488,16 +551,17 @@
 
           <div>
             <p>
-              <strong>Zhou, X.</strong>, &amp; Earle, F. S. (2026).
+              <strong>Zhou, X.</strong>, &amp; Earle, F. S. (in press).
               The differential impact of sleep-dependent consolidation in
               speech perceptual learning: A systematic review.
               <em>Journal of Speech, Language, and Hearing Research</em>.
+              <a href="https://doi.org/10.1044/2026_JSLHR-26-00061" target="_blank" rel="noopener">DOI</a>
             </p>
           </div>
 
           <div>
             <p>
-              <strong>Zhou, X.</strong>, Heffner, C., &amp; Myers, E. B. (2026).
+              <strong>Zhou, X.</strong>, Heffner, C., &amp; Myers, E. B. (in press).
               The role of vocabulary knowledge and social contact in
               L2-accented speech perception: Evidence from low-exposure listeners.
               <em>Proceedings of the Annual Meeting of the Cognitive Science Society</em>.
@@ -506,18 +570,15 @@
 
           <div>
             <p>
-              <strong>Zhou, X.</strong>, &amp; Liu, C. (2025).
+              <strong>Zhou, X.</strong>, &amp; Liu, C. (May 2025).
               The effect of noise types on working memory and speech-in-noise
               recognition. Poster presented at the 188th Meeting of the
               Acoustical Society of America.
+              <a href="https://doi.org/10.1121/10.0037766" target="_blank" rel="noopener">DOI</a>
             </p>
           </div>
 
         </div>
-
-        <p class="small-note">
-          See my CV for the complete list of publications and presentations.
-        </p>
       </section>
 
       <section id="clinical" class="content-section">
@@ -536,52 +597,6 @@
             vestibular testing, auditory processing assessment, pediatric and
             adult screening, and auditory electrophysiology.
           </p>
-        </div>
-
-        <p class="small-note">
-          A full list of clinical placements is available in my CV.
-        </p>
-      </section>
-
-      <section id="news" class="content-section">
-        <h2>News</h2>
-
-        <div class="content-list">
-
-          <div class="row">
-            <div class="date">July 2026</div>
-            <div>
-              Presented a flash talk at the Annual Meeting of the Cognitive
-              Science Society on vocabulary knowledge and social contact in
-              L2-accented speech perception.
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="date">July 2026</div>
-            <div>
-              Received the Sadanand Singh Memorial Scholarship from the
-              American Academy of Audiology Foundation.
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="date">2026–2027</div>
-            <div>
-              Received the Outstanding Graduate Research Fellowship from
-              The University of Texas at Austin.
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="date">June 2026</div>
-            <div>
-              Began a funded Health Communication Scholars Program project
-              examining communication, trust, and understanding among older
-              adults with hearing loss.
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -603,8 +618,7 @@
                 </em>
               </p>
               <p class="details">
-                Center for Health Communication, The University of Texas at Austin
-                · $2,500
+                Center for Health Communication, The University of Texas at Austin · $2,500
               </p>
             </div>
           </div>
@@ -614,9 +628,7 @@
             <div>
               <h3>Undergraduate Research Grant</h3>
               <p><strong>Role:</strong> Principal Investigator</p>
-              <p>
-                <em>How Prior Experience Shapes Accent Adaptation</em>
-              </p>
+              <p><em>How Prior Experience Shapes Accent Adaptation</em></p>
               <p class="details">
                 UConn Institute for the Brain and Cognitive Sciences · $5,000
               </p>
@@ -624,12 +636,15 @@
           </div>
 
         </div>
-
-        <p class="small-note">
-          Fellowships, scholarships, travel awards, and academic honors are
-          listed in my CV.
-        </p>
       </section>
+
+      <div class="cv-note">
+        <p>
+          Additional publications, presentations, clinical placements, awards,
+          teaching, service, and professional activities are available in my
+          <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>.
+        </p>
+      </div>
 
       <section id="contact" class="content-section">
         <h2>Contact</h2>
@@ -640,12 +655,7 @@
             Department of Speech, Language, and Hearing Sciences<br>
             The University of Texas at Austin
           </p>
-          <p>
-            Email:
-            <a href="mailto:xinming.zhou@austin.utexas.edu">
-              xinming.zhou@austin.utexas.edu
-            </a>
-          </p>
+          <p>Email: xinming dot zhou at austin dot utexas dot edu</p>
         </div>
       </section>
 
