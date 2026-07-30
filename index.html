@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta
     name="description"
     content="Academic website of Xinming Zhou, a Ph.D. student in Speech, Language, and Hearing Sciences at The University of Texas at Austin."
   >
+
   <title>Xinming Zhou | Speech, Language, and Hearing Sciences</title>
 
   <style>
@@ -113,36 +115,26 @@
     }
 
     .hero {
-      padding: 72px 0 60px;
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+      padding: 64px 0;
     }
 
     .intro-layout {
       display: grid;
-      grid-template-columns: 180px minmax(0, 1fr);
-      gap: 42px;
+      grid-template-columns: 200px minmax(0, 1fr);
+      gap: 54px;
       align-items: center;
-    }
-
-    .headshot,
-    .headshot-placeholder {
-      width: 180px;
-      aspect-ratio: 4 / 5;
-      border: 1px solid var(--border);
+      width: 100%;
     }
 
     .headshot {
+      width: 200px;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
+      border: 1px solid var(--border);
       background: #f3f4f5;
-    }
-
-    .headshot-placeholder {
-      display: grid;
-      place-items: center;
-      padding: 18px;
-      color: var(--muted);
-      background: #f5f6f7;
-      text-align: center;
-      font-size: 0.9rem;
     }
 
     h1,
@@ -176,6 +168,11 @@
       font-size: 1.08rem;
     }
 
+    .intro-text p {
+      max-width: 760px;
+      margin: 0 0 16px;
+    }
+
     .profile-links {
       display: flex;
       flex-wrap: wrap;
@@ -186,15 +183,21 @@
       font-size: 0.95rem;
     }
 
-    .education-item + .education-item {
-      margin-top: 18px;
+    .scroll-cue {
+      display: inline-block;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    .education-item p {
-      margin: 0;
+    .scroll-cue:hover,
+    .scroll-cue:focus {
+      color: var(--accent-dark);
+      text-decoration: none;
     }
 
     .section-band {
+      scroll-margin-top: 72px;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       background: var(--section-background);
@@ -213,6 +216,7 @@
 
     section.content-section {
       padding: 56px 0 0;
+      scroll-margin-top: 86px;
     }
 
     h2 {
@@ -226,6 +230,14 @@
     h3 {
       margin: 0 0 6px;
       font-size: 1rem;
+    }
+
+    .education-item + .education-item {
+      margin-top: 18px;
+    }
+
+    .education-item p {
+      margin: 0;
     }
 
     .homepage-news {
@@ -347,8 +359,13 @@
         padding: 16px 0;
       }
 
+      nav {
+        gap: 12px 16px;
+      }
+
       .hero {
-        padding: 48px 0;
+        min-height: auto;
+        padding: 48px 0 56px;
       }
 
       .intro-layout,
@@ -360,9 +377,8 @@
         gap: 34px;
       }
 
-      .headshot,
-      .headshot-placeholder {
-        width: 160px;
+      .headshot {
+        width: 170px;
       }
 
       .row {
@@ -372,10 +388,6 @@
 
       h1 {
         gap: 0.25em;
-      }
-
-      nav {
-        gap: 12px 16px;
       }
     }
   </style>
@@ -389,10 +401,7 @@
 
       <nav aria-label="Main navigation">
         <a href="research.html">Research</a>
-        <a href="#news">News</a>
         <a href="#publications">Publications</a>
-        <a href="#clinical">Clinical Training</a>
-        <a href="#funding">Funding</a>
         <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -404,7 +413,11 @@
     <section class="hero">
       <div class="container intro-layout">
 
-        <img class="headshot" src="headshot.jpg" alt="Portrait of Xinming Zhou">
+        <img
+          class="headshot"
+          src="headshot.jpg"
+          alt="Portrait of Xinming Zhou"
+        >
 
         <div class="intro-text">
           <h1>
@@ -434,44 +447,74 @@
 
           <div class="profile-links">
             <a href="research.html">Research</a>
-            <a href="https://scholar.google.com/citations?user=wLqK3e4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-            <a href="https://www.linkedin.com/in/xinmingzhou/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>
+
+            <a
+              href="https://scholar.google.com/citations?user=wLqK3e4AAAAJ&hl=en"
+              target="_blank"
+              rel="noopener"
+            >
+              Google Scholar
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/xinmingzhou/"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href="Xinming-Zhou-CV.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              CV
+            </a>
           </div>
+
+          <a
+            class="scroll-cue"
+            href="#education-news"
+            aria-label="Scroll to education and recent news"
+          >
+            Education and recent news ↓
+          </a>
         </div>
 
       </div>
     </section>
 
-    <div class="section-band">
+    <div class="section-band" id="education-news">
       <div class="container overview-grid">
 
         <section class="overview-box">
           <h2>Education</h2>
-            <div class="education-item">
-              <p>
-                <strong>Ph.D., Speech, Language, and Hearing Sciences</strong><br>
-                The University of Texas at Austin, 2024–Present
-              </p>
-            </div>
-            
-            <div class="education-item">
-              <p>
-                <strong>M.S., Neuroscience and Education</strong><br>
-                Teachers College, Columbia University, 2022–2024
-              </p>
-            </div>
-            
-            <div class="education-item">
-              <p>
-                <strong>B.A., Cognitive Science, Magna Cum Laude</strong><br>
-                Minor in Neuroscience<br>
-                University of Connecticut, 2018–2022
-              </p>
+
+          <div class="education-item">
+            <p>
+              <strong>Ph.D., Speech, Language, and Hearing Sciences</strong><br>
+              The University of Texas at Austin, 2024–Present
+            </p>
+          </div>
+
+          <div class="education-item">
+            <p>
+              <strong>M.S., Neuroscience and Education</strong><br>
+              Teachers College, Columbia University, 2022–2024
+            </p>
+          </div>
+
+          <div class="education-item">
+            <p>
+              <strong>B.A., Cognitive Science, Magna Cum Laude</strong><br>
+              Minor in Neuroscience<br>
+              University of Connecticut, 2018–2022
+            </p>
           </div>
         </section>
 
-        <section class="overview-box" id="news">
+        <section class="overview-box">
           <h2>Recent News</h2>
 
           <div class="homepage-news">
@@ -482,7 +525,14 @@
                 Presented a flash talk at the Annual Meeting of the Cognitive
                 Science Society on vocabulary knowledge and social contact in
                 L2-accented speech perception.
-                <a class="news-link" href="https://cognitivesciencesociety.org/wp-content/uploads/2026/07/Podium-CogSci-2026-program-v106.pdf" target="_blank" rel="noopener">link</a>
+                <a
+                  class="news-link"
+                  href="https://cognitivesciencesociety.org/wp-content/uploads/2026/07/Podium-CogSci-2026-program-v106.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Program
+                </a>
               </p>
             </div>
 
@@ -497,17 +547,8 @@
             <div class="homepage-news-item">
               <span class="date">July 2026</span>
               <p>
-                Received the Audiology/Hearing Science Research Travel Award (ARTA) from the
-                American Speech-Language-Hearing Association.
-              </p>
-            </div>
-
-            <div class="homepage-news-item">
-              <span class="date">May 2026</span>
-              <p>
-                Systematic review on sleep-dependent consolidation
-                in speech perceptual learning accepted by JSLHR.
-                <a class="news-link" href="https://doi.org/10.1044/2026_JSLHR-26-00061" target="_blank" rel="noopener">Paper</a>
+                Received the Audiology/Hearing Science Research Travel Award
+                from the American Speech-Language-Hearing Association.
               </p>
             </div>
 
@@ -517,10 +558,27 @@
             <summary>View earlier news</summary>
 
             <div class="homepage-news-item">
+              <span class="date">May 2026</span>
+              <p>
+                A systematic review on sleep-dependent consolidation in speech
+                perceptual learning was accepted by the
+                <em>Journal of Speech, Language, and Hearing Research</em>.
+                <a
+                  class="news-link"
+                  href="https://doi.org/10.1044/2026_JSLHR-26-00061"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Paper
+                </a>
+              </p>
+            </div>
+
+            <div class="homepage-news-item">
               <span class="date">February 2026</span>
               <p>
-                Received the 2026-2027 Outstanding Graduate Research Fellowship from
-                The University of Texas at Austin.
+                Received the 2026–2027 Outstanding Graduate Research Fellowship
+                from The University of Texas at Austin.
               </p>
             </div>
 
@@ -551,7 +609,13 @@
               The differential impact of sleep-dependent consolidation in
               speech perceptual learning: A systematic review.
               <em>Journal of Speech, Language, and Hearing Research</em>.
-              <a href="https://doi.org/10.1044/2026_JSLHR-26-00061" target="_blank" rel="noopener">DOI</a>
+              <a
+                href="https://doi.org/10.1044/2026_JSLHR-26-00061"
+                target="_blank"
+                rel="noopener"
+              >
+                DOI
+              </a>
             </p>
           </div>
 
@@ -570,7 +634,13 @@
               The effect of noise types on working memory and speech-in-noise
               recognition. Poster presented at the 188th Meeting of the
               Acoustical Society of America.
-              <a href="https://doi.org/10.1121/10.0037766" target="_blank" rel="noopener">DOI</a>
+              <a
+                href="https://doi.org/10.1121/10.0037766"
+                target="_blank"
+                rel="noopener"
+              >
+                DOI
+              </a>
             </p>
           </div>
 
@@ -603,17 +673,20 @@
 
           <div class="row">
             <div class="date">2026–2027</div>
+
             <div>
               <h3>
-  <a
-    href="https://uthealthcomm.org/research/health-communication-scholars-program"
-    target="_blank"
-    rel="noopener"
-  >
-    Health Communication Scholars Program
-  </a>
-</h3>
+                <a
+                  href="https://uthealthcomm.org/research/health-communication-scholars-program"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Health Communication Scholars Program
+                </a>
+              </h3>
+
               <p><strong>Role:</strong> Principal Investigator</p>
+
               <p>
                 <em>
                   I hear you: Examining communication strategies and settings
@@ -621,26 +694,34 @@
                   hearing loss
                 </em>
               </p>
+
               <p class="details">
-                Center for Health Communication, The University of Texas at Austin · $2,500
+                Center for Health Communication,
+                The University of Texas at Austin · $2,500
               </p>
             </div>
           </div>
 
           <div class="row">
             <div class="date">2021–2022</div>
+
             <div>
               <h3>
-  <a
-    href="https://braincognitivesciences.institute.uconn.edu/tag/undergraduate-research-awards/"
-    target="_blank"
-    rel="noopener"
-  >
-    Undergraduate Summer Research Award
-  </a>
-</h3>
+                <a
+                  href="https://braincognitivesciences.institute.uconn.edu/tag/undergraduate-research-awards/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Undergraduate Summer Research Award
+                </a>
+              </h3>
+
               <p><strong>Role:</strong> Principal Investigator</p>
-              <p><em>How prior experience shapes accent adaptation</em></p>
+
+              <p>
+                <em>How prior experience shapes accent adaptation</em>
+              </p>
+
               <p class="details">
                 UConn Institute for the Brain and Cognitive Sciences · $5,000
               </p>
@@ -654,7 +735,13 @@
         <p>
           Additional publications, presentations, clinical placements, awards,
           teaching, service, and professional activities are available in my
-          <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>.
+          <a
+            href="Xinming-Zhou-CV.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            CV
+          </a>.
         </p>
       </div>
 
@@ -663,11 +750,15 @@
 
         <div class="contact-list">
           <p><strong>Xinming Zhou 周歆茗</strong></p>
+
           <p>
             Department of Speech, Language, and Hearing Sciences<br>
             The University of Texas at Austin
           </p>
-          <p>Email: xinming dot zhou at austin dot utexas dot edu</p>
+
+          <p>
+            Email: xinming dot zhou at austin dot utexas dot edu
+          </p>
         </div>
       </section>
 
