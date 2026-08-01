@@ -15,8 +15,8 @@
     :root {
       --text: #22262b;
       --muted: #69727b;
-      --accent: #667493;
-      --accent-dark: #4c5875;
+      --accent: #7b8aa0;
+      --accent-dark: #5a687a;
       --accent-soft: #f1f3f8;
       --border: #dde3e8;
       --background: #ffffff;
@@ -36,7 +36,7 @@
       margin: 0;
       color: var(--text);
       background: var(--background);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
       font-size: 16px;
       line-height: 1.7;
     }
@@ -53,7 +53,7 @@
 
     a:focus-visible,
     summary:focus-visible {
-      outline: 3px solid rgba(102, 116, 147, 0.35);
+      outline: 3px solid rgba(123, 138, 160, 0.35);
       outline-offset: 3px;
     }
 
@@ -66,9 +66,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      border-bottom: 1px solid #505c78;
+      border-bottom: 1px solid #8b97a8;
       background: var(--accent);
-      box-shadow: 0 2px 8px rgba(34, 38, 43, 0.08);
+      box-shadow: 0 2px 8px rgba(34, 38, 43, 0.06);
     }
 
     .topbar {
@@ -76,38 +76,39 @@
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      min-height: 72px;
+      min-height: 68px;
     }
 
     .site-name {
       color: #ffffff;
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: 1rem;
+      font-weight: 650;
+      letter-spacing: -0.01em;
     }
 
     .site-name:hover,
     .site-name:focus {
       color: #ffffff;
       text-decoration: none;
-      opacity: 0.88;
+      opacity: 0.85;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 20px;
       font-size: 0.93rem;
     }
 
     nav a {
-      color: rgba(255, 255, 255, 0.92);
+      color: rgba(255, 255, 255, 0.9);
     }
 
     nav a:hover,
     nav a:focus {
       color: #ffffff;
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     }
 
     main {
@@ -115,23 +116,23 @@
     }
 
     .hero {
-      min-height: calc(100vh - 72px);
+      min-height: calc(100vh - 68px);
       display: flex;
       align-items: center;
-      padding: 64px 0;
+      padding: 80px 0 72px;
     }
 
     .intro-layout {
       display: grid;
-      grid-template-columns: 200px minmax(0, 650px);
-      gap: 48px;
+      grid-template-columns: 220px minmax(0, 600px);
+      gap: 64px;
       align-items: center;
-      justify-content: center; 
+      justify-content: center;
       width: 100%;
     }
 
     .headshot {
-      width: 200px;
+      width: 220px;
       aspect-ratio: 4 / 5;
       object-fit: cover;
       border: 1px solid var(--border);
@@ -148,45 +149,53 @@
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
-      gap: 0.35em;
-      margin: 0 0 4px;
-      font-size: clamp(2.1rem, 5vw, 2.6rem);
+      gap: 0.3em;
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 2.5rem);
       font-weight: 650;
       letter-spacing: -0.025em;
     }
 
     .chinese-name {
       color: var(--muted);
-      font-size: 0.48em;
-      font-weight: 400;
-      letter-spacing: 0;
+      font-size: 0.65em;
+      font-weight: 380;
+      letter-spacing: 0.02em;
       white-space: nowrap;
     }
 
+    .chinese-name::before {
+      content: "· ";
+      color: var(--border);
+      font-weight: 300;
+    }
+
     .position {
-      margin: 0 0 22px;
+      margin: 0 0 28px;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
     }
 
     .intro-text p {
-      max-width: 650px;
+      max-width: 580px;
       margin: 0 0 16px;
+      font-size: 1.02rem;
     }
 
     .profile-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 18px;
-      margin-top: 24px;
-      padding-top: 18px;
+      gap: 12px 22px;
+      margin-top: 32px;
+      padding-top: 20px;
       border-top: 1px solid var(--border);
       font-size: 0.95rem;
     }
 
     .scroll-cue {
       display: inline-block;
-      margin-top: 28px;
+      margin-top: 32px;
       color: var(--muted);
       font-size: 0.9rem;
     }
@@ -198,7 +207,7 @@
     }
 
     .section-band {
-      scroll-margin-top: 72px;
+      scroll-margin-top: 68px;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       background: var(--section-background);
@@ -208,7 +217,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 54px;
-      padding: 46px 0;
+      padding: 48px 0;
     }
 
     .overview-box {
@@ -216,16 +225,17 @@
     }
 
     section.content-section {
-      padding: 56px 0 0;
+      padding: 60px 0 0;
       scroll-margin-top: 86px;
     }
 
     h2 {
-      margin: 0 0 22px;
-      padding-bottom: 9px;
+      margin: 0 0 24px;
+      padding-bottom: 10px;
       border-bottom: 3px solid var(--accent-soft);
-      font-size: 1.48rem;
+      font-size: 1.45rem;
       font-weight: 650;
+      letter-spacing: -0.015em;
     }
 
     h3 {
@@ -313,7 +323,7 @@
     }
 
     .clinical-summary {
-      padding: 22px 24px;
+      padding: 24px 26px;
       border-left: 3px solid var(--accent);
       background: var(--accent-soft);
     }
@@ -374,12 +384,16 @@
         grid-template-columns: 1fr;
       }
 
+      .intro-layout {
+        gap: 36px;
+      }
+
       .overview-grid {
         gap: 34px;
       }
 
       .headshot {
-        width: 170px;
+        width: 180px;
       }
 
       .row {
@@ -403,7 +417,7 @@
       <nav aria-label="Main navigation">
         <a href="research.html">Research</a>
         <a href="#publications">Publications</a>
-        <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="Xinming-Zhou-CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -418,6 +432,7 @@
           class="headshot"
           src="headshot.jpg"
           alt="Portrait of Xinming Zhou"
+          loading="lazy"
         >
 
         <div class="intro-text">
@@ -449,7 +464,7 @@
             <a
               href="https://scholar.google.com/citations?user=wLqK3e4AAAAJ&hl=en"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Google Scholar
             </a>
@@ -457,7 +472,7 @@
             <a
               href="https://www.linkedin.com/in/xinmingzhou/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               LinkedIn
             </a>
@@ -465,7 +480,7 @@
             <a
               href="Xinming-Zhou-CV.pdf"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               CV
             </a>
@@ -527,7 +542,7 @@
                   class="news-link"
                   href="https://cognitivesciencesociety.org/wp-content/uploads/2026/07/Podium-CogSci-2026-program-v106.pdf"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   Program
                 </a>
@@ -565,7 +580,7 @@
                   class="news-link"
                   href="https://doi.org/10.1044/2026_JSLHR-26-00061"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   Paper
                 </a>
@@ -600,15 +615,15 @@
         <h2>Selected Publications and Presentations</h2>
 
         <div class="content-list">
-<div>
-  <p>
-    <strong>Zhou, X.</strong>, Heffner, C., &amp; Myers, E. B. (2026).
-    <a href="https://escholarship.org/uc/item/2sq1r02d" target="_blank" rel="noopener noreferrer">
-      The role of vocabulary knowledge and social contact in L2-accented speech perception: Evidence from low-exposure listeners
-    </a>.
-    <em>Proceedings of the Annual Meeting of the Cognitive Science Society</em>.
-  </p>
-</div>
+          <div>
+            <p>
+              <strong>Zhou, X.</strong>, Heffner, C., &amp; Myers, E. B. (2026).
+              <a href="https://escholarship.org/uc/item/2sq1r02d" target="_blank" rel="noopener noreferrer">
+                The role of vocabulary knowledge and social contact in L2-accented speech perception: Evidence from low-exposure listeners
+              </a>.
+              <em>Proceedings of the Annual Meeting of the Cognitive Science Society</em>.
+            </p>
+          </div>
           
           <div>
             <p>
@@ -619,7 +634,7 @@
               <a
                 href="https://doi.org/10.1044/2026_JSLHR-26-00061"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 DOI
               </a>
@@ -635,7 +650,7 @@
               <a
                 href="https://doi.org/10.1121/10.0037766"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 DOI
               </a>
@@ -677,7 +692,7 @@
                 <a
                   href="https://uthealthcomm.org/research/health-communication-scholars-program"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   Health Communication Scholars Program
                 </a>
@@ -708,7 +723,7 @@
                 <a
                   href="https://braincognitivesciences.institute.uconn.edu/tag/undergraduate-research-awards/"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   Undergraduate Summer Research Award
                 </a>
@@ -736,7 +751,7 @@
           <a
             href="Xinming-Zhou-CV.pdf"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             CV
           </a>.
